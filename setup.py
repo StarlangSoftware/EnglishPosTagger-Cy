@@ -8,7 +8,7 @@ setup(
     version='1.0.0',
     packages=['PosTagger'],
     package_data={'PosTagger': ['*.pxd', '*.pyx', '*.c']},
-    url='https://github.com/olcaytaner/PosTagger-Cy',
+    url='https://github.com/StarlangSoftware/PosTagger-Cy',
     license='',
     author='olcaytaner',
     author_email='olcay.yildiz@ozyegin.edu.tr',
