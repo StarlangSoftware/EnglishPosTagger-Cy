@@ -11,7 +11,7 @@ setup(
     url='https://github.com/olcaytaner/PosTagger-Cy',
     license='',
     author='olcaytaner',
-    author_email='olcaytaner@isikun.edu.tr',
+    author_email='olcay.yildiz@ozyegin.edu.tr',
     description='English PosTagger Library',
     install_requires=['NlpToolkit-Corpus-Cy', 'NlpToolkit-Hmm-Cy']
 )
