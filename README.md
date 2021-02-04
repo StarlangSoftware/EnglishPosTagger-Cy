@@ -1,6 +1,6 @@
 For Developers
 ============
-You can also see [Java](https://github.com/starlangsoftware/EnglishPosTagger), [C++](https://github.com/starlangsoftware/EnglishPosTagger-CPP), [Swift](https://github.com/starlangsoftware/EnglishPosTagger-Swift), or [C#](https://github.com/starlangsoftware/EnglishPosTagger-CS) repository.
+You can also see [Python](https://github.com/starlangsoftware/EnglishPosTagger-Py), [Java](https://github.com/starlangsoftware/EnglishPosTagger), [C++](https://github.com/starlangsoftware/EnglishPosTagger-CPP), [Swift](https://github.com/starlangsoftware/EnglishPosTagger-Swift), or [C#](https://github.com/starlangsoftware/EnglishPosTagger-CS) repository.
 
 ## Requirements
 
