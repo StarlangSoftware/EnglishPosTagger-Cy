@@ -28,6 +28,7 @@ cdef class PosTaggedCorpus(Corpus):
         if fileName is not None:
             inputFile = open(fileName, "r", encoding="utf8")
             lines = inputFile.readlines()
+            inputFile.close()
             for line in lines:
                 words = re.split("[\t\n ]", line)
                 for word in words:
