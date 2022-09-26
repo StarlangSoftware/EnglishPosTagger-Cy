@@ -8,7 +8,7 @@ from PosTagger.PosTagger cimport PosTagger
 
 cdef class NaivePosTagger(PosTagger):
 
-    cdef dict __maxMap
+    cdef dict __max_map
 
     cpdef train(self, PosTaggedCorpus corpus):
         """
@@ -20,27 +20,27 @@ cdef class NaivePosTagger(PosTagger):
         corpus : PosTaggedCorpus
             Training data for the tagger.
         """
-        cdef dict wordMap
+        cdef dict word_map
         cdef int i, j
         cdef Sentence s
-        cdef PosTaggedWord taggedWord
+        cdef PosTaggedWord tagged_word
         cdef str word
-        cdef CounterHashMap counterMap
-        wordMap = {}
+        cdef CounterHashMap counter_map
+        word_map = {}
         for i in range(corpus.sentenceCount()):
             s = corpus.getSentence(i)
             for j in range(s.wordCount()):
-                taggedWord = corpus.getSentence(i).getWord(j)
-                if isinstance(taggedWord, PosTaggedWord):
-                    if taggedWord.getName() in wordMap:
-                        wordMap[taggedWord.getName()].put(taggedWord.getTag())
+                tagged_word = corpus.getSentence(i).getWord(j)
+                if isinstance(tagged_word, PosTaggedWord):
+                    if tagged_word.getName() in word_map:
+                        word_map[tagged_word.getName()].put(tagged_word.getTag())
                     else:
-                        counterMap = CounterHashMap()
-                        counterMap.put(taggedWord.getTag())
-                        wordMap[taggedWord.getName()] = counterMap
-        self.__maxMap = {}
-        for word in wordMap:
-            self.__maxMap[word] = wordMap[word].max()
+                        counter_map = CounterHashMap()
+                        counter_map.put(tagged_word.getTag())
+                        word_map[tagged_word.getName()] = counter_map
+        self.__max_map = {}
+        for word in word_map:
+            self.__max_map[word] = word_map[word].max()
 
     cpdef Sentence posTag(self, Sentence sentence):
         """
@@ -61,5 +61,5 @@ cdef class NaivePosTagger(PosTagger):
         cdef int i
         result = Sentence()
         for i in range(sentence.wordCount()):
-            result.addWord(PosTaggedWord(sentence.getWord(i).getName(), self.__maxMap[sentence.getWord(i).getName()]))
+            result.addWord(PosTaggedWord(sentence.getWord(i).getName(), self.__max_map[sentence.getWord(i).getName()]))
         return result

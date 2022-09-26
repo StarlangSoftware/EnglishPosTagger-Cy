@@ -3,7 +3,9 @@ from Dictionary.Word cimport Word
 
 cdef class PosTaggedWord(Word):
 
-    def __init__(self, name: str, tag: str):
+    def __init__(self,
+                 name: str,
+                 tag: str):
         """
         A constructor of PosTaggedWord which takes name and tag as input and sets the corresponding attributes
 

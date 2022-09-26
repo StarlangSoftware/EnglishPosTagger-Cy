@@ -9,7 +9,7 @@ setup(
     ext_modules=cythonize(["PosTagger/*.pyx"],
                           compiler_directives={'language_level': "3"}),
     name='NlpToolkit-PosTagger-Cy',
-    version='1.0.2',
+    version='1.0.3',
     packages=['PosTagger'],
     package_data={'PosTagger': ['*.pxd', '*.pyx', '*.c']},
     url='https://github.com/StarlangSoftware/PosTagger-Cy',
