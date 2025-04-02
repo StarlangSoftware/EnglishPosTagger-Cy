@@ -22,7 +22,7 @@ cdef class PosTaggedCorpus(Corpus):
         cdef list lines, words
         cdef str line, word, name, tag, short_tag
         self.sentences = []
-        self.wordList = CounterHashMap()
+        self.word_list = CounterHashMap()
         self.__tag_list = CounterHashMap()
         new_sentence = Sentence()
         if fileName is not None:
