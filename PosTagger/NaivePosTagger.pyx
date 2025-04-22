@@ -40,7 +40,7 @@ cdef class NaivePosTagger(PosTagger):
                         word_map[tagged_word.getName()] = counter_map
         self.__max_map = {}
         for word in word_map:
-            self.__max_map[word] = word_map[word].max()
+            self.__max_map[word] = word_map[word].maxItem()
 
     cpdef Sentence posTag(self, Sentence sentence):
         """
