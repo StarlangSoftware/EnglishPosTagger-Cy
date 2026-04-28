@@ -8,8 +8,8 @@ from Cython.Build import cythonize
 setup(
     ext_modules=cythonize(["PosTagger/*.pyx"],
                           compiler_directives={'language_level': "3"}),
-    name='nlptoolkit-postagger-cy',
-    version='1.0.5',
+    name='nlptoolkit_postagger_cy',
+    version='1.0.6',
     packages=['PosTagger'],
     package_data={'PosTagger': ['*.pxd', '*.pyx', '*.c']},
     url='https://github.com/StarlangSoftware/PosTagger-Cy',
